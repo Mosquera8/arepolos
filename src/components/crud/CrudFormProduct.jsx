@@ -9,7 +9,7 @@ const formData= {
     id: null
   }
 
-const CrudForm = ({ addProduct, editProduct, editData }) => {
+const CrudFormProduct = ({ addProduct, editProduct, editData }) => {
 
 const {name, description,price,img,id,onInputChange,onResetForm} =useForm (formData)
 
@@ -20,7 +20,7 @@ const {name, description,price,img,id,onInputChange,onResetForm} =useForm (formD
       if (editData !== null) {
         editProduct({name,description,price,img})
       } else { 
-        id = Date.now()
+        id = Date.now() //editar
         addProduct({id,name,description,price,img})
         onResetForm()
       }
@@ -46,4 +46,4 @@ const {name, description,price,img,id,onInputChange,onResetForm} =useForm (formD
   </>
 }
 
-export default CrudForm
+export default CrudFormProduct

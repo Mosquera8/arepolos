@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CrudTable = ({ products, setEditData, deleteEquipo }) => {
+const CrudTableProduct = ({ products, setEditData, deleteProduct }) => {
 
   return <>
     <h3>Productos actuales</h3>
@@ -25,7 +25,7 @@ const CrudTable = ({ products, setEditData, deleteEquipo }) => {
                     <button className='btn btn-outline-warning mx-1'
                     onClick={() => setEditData(product)}>Editar</button>
                     <button className='btn btn-outline-danger mx-1'
-                    onClick={() => deleteEquipo(product.id)}>Eliminar</button>
+                    onClick={() => deleteProduct(product.id)}>Eliminar</button>
                   </td>
                 </tr>
         })
@@ -35,4 +35,4 @@ const CrudTable = ({ products, setEditData, deleteEquipo }) => {
   </>
 }
 
-export default CrudTable
+export default CrudTableProduct

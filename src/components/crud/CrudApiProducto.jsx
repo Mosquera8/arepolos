@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import CrudForm from './CrudForm'
-import CrudTable from './CrudTable'
+import CrudFormProduct from './CrudFormProduct'
+import CrudTableProduct from './CrudTableProduct'
 import Loader from './Loader'
 import Message from './Message'
 import { helpFetch } from '../../helpers/helpFetch'
@@ -29,15 +29,15 @@ const CrudApiProducto = () => {
   }, [])
 
   // inserción de datos
-  const addProduct = (equipo) => {
+  const addProduct = (product) => {
     setLoading(true)
     const options = {
-      body: equipo
+      body: product
     }
 
     API.post("products", options).then(response => {
       if (!response.error) {
-        setProducts([...products, equipo])
+        setProducts([...products, product])
         setErrorMessage(null)
       } else {
         setProducts(null)
@@ -49,16 +49,16 @@ const CrudApiProducto = () => {
   }
 
   // editar un producto
-  const editProduct = (equipo) => {
+  const editProduct = (product) => {
     setLoading(true)
     const options = {
-      body: equipo
+      body: product
     }
 
-    API.put("products", options, equipo.id).then(response => {
+    API.put("products", options, product.id).then(response => {
       if (!response.error) {
-        const newEquipos = products.map(el => el.id === equipo.id ? equipo : el)
-        setProducts(newEquipos)
+        const newProducts = products.map(el => el.id === product.id ? product : el)
+        setProducts(newProducts)
         setEditData(null)
         setErrorMessage(null)
       } else {
@@ -70,7 +70,7 @@ const CrudApiProducto = () => {
     })
   }
 
-  // Eliminar un Equipo
+  // Eliminar un product
   const deleteProduct = id => {
     setLoading(true)
     const isDelete = window.confirm(`¿Deseas eliminar el registro con id: ${id}?`)
@@ -78,8 +78,8 @@ const CrudApiProducto = () => {
     if (isDelete) {
       API.del("products", id).then( response => {
         if (!response.error) {
-          const newEquipos = products.filter(el => el.id !== id)
-          setProducts(newEquipos)
+          const newProducts = products.filter(el => el.id !== id)
+          setProducts(newProducts)
           setErrorMessage(null)
         } else {
           setProducts(null)
@@ -95,11 +95,11 @@ const CrudApiProducto = () => {
 
   return <>
     <h2>CRUD API de Productos</h2>
-    <CrudForm addProduct={addProduct} editProduct={editProduct} editData={editData}/>
+    <CrudFormProduct addProduct={addProduct} editProduct={editProduct} editData={editData}/>
     { 
       loading
       ? <Loader />
-      : products && <CrudTable products={products} setEditData={setEditData} deleteProduct={deleteProduct}/> 
+      : products && <CrudTableProduct products={products} setEditData={setEditData} deleteProduct={deleteProduct}/> 
     }
     { errorMessage && <Message text={errorMessage}/> }
   </>

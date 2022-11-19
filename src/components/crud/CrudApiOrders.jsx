@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import CrudForm from './CrudForm'
-import CrudTable from './CrudTable'
+import CrudFormOrders from './CrudFormOrders'
+import CrudTableOrders from './CrudTableOrders'
 import Loader from './Loader'
 import Message from './Message'
 import { helpFetch } from '../../helpers/helpFetch'
@@ -94,12 +94,12 @@ const CrudApiOrders = () => {
   }
 
   return <>
-    <h2>CRUD API de Productos</h2>
-    <CrudForm addOrder={addOrder} editOrder={editOrder} editData={editData}/>
+    <h2>CRUD API de Orders</h2>
+    <CrudFormOrders addOrder={addOrder} editOrder={editOrder} editData={editData}/>
     { 
       loading
       ? <Loader />
-      : orders && <CrudTable orders={orders} setEditData={setEditData} deleteOrder={deleteOrder}/> 
+      : orders && <CrudTableOrders orders={orders} setEditData={setEditData} deleteOrder={deleteOrder}/> 
     }
     { errorMessage && <Message text={errorMessage}/> }
   </>

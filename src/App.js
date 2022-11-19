@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import GetProducts from './components/GetProducts'
 import CrudApiProducto from './components/crud/CrudApiProducto';
+import CrudApiOrders from './components/crud/CrudApiOrders';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       </header>
         <GetProducts />
         <CrudApiProducto/>
+        <CrudApiOrders/>
     </div>
   );
 }
