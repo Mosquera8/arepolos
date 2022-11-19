@@ -1,0 +1,86 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Arepa Reina pepiada",
+      "price": 4,
+      "description": "Arepa con queso,frojoles caraota,etc",
+      "img": "scmsñcm"
+    },
+    {
+      "id": 2,
+      "name": "Arepa simple",
+      "price": 4,
+      "description": "Arepa",
+      "img": "scmsñcm"
+    },
+    {
+      "id": 3,
+      "name": "Arepa SUPER simple",
+      "price": "10",
+      "description": "es muy simple????",
+      "img": "scmsñcmaaccsc",
+      "product": "Arepa SUPER simples"
+    },
+    {
+      "id": 1668829401137,
+      "name": "Alta",
+      "description": "scsc",
+      "price": "1",
+      "img": "scsc"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "idCostumer": 1
+    },
+    {
+      "id": 2,
+      "idCostumer": 1
+    }
+  ],
+  "ordersDetails": [
+    {
+      "id": 1,
+      "idOrder": 1,
+      "idProduct": 1,
+      "total": 0,
+      "quantity": 3
+    },
+    {
+      "id": 2,
+      "idOrder": 1,
+      "idProduct": 2,
+      "total": 0,
+      "quantity": 3
+    },
+    {
+      "id": 3,
+      "idOrder": 2,
+      "idProduct": 2,
+      "total": 0,
+      "quantity": 2
+    }
+  ],
+  "costumers": [
+    {
+      "id": 1,
+      "email": "juan@gmail.com",
+      "password": "123",
+      "address": "calle 2a 123 ",
+      "cellphone": "1233432",
+      "firstName": "juan",
+      "lastName": "mosquera"
+    },
+    {
+      "id": 2,
+      "email": "mosquera@gmail.com",
+      "password": "1234",
+      "address": "calle 2a 123 ",
+      "cellphone": "1233432",
+      "firstName": "juan",
+      "lastName": "mosquera"
+    }
+  ]
+}
